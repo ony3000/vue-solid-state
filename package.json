@@ -4,6 +4,7 @@
   "description": "Imitation of a responsive site template designed by HTML5 UP",
   "private": true,
   "scripts": {
+    "dev": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
