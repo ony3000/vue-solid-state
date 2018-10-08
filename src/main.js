@@ -1,8 +1,10 @@
 import Vue from 'vue/dist/vue.runtime.esm.js';
 import SiteApp from './site-app.vue';
+import router from './router';
 
 new Vue({
     el: '#page-wrapper',
+    router,
     components: {
         SiteApp,
     },

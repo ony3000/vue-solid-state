@@ -1,9 +1,9 @@
 <template>
-    <router-view/>
+    <section id="wrapper"></section>
 </template>
 
 <script>
 export default {
-    name: 'site-app',
+    name: 'index',
 };
 </script>
