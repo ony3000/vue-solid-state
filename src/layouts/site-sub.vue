@@ -2,7 +2,6 @@
     <div id="page-wrapper">
         <site-header></site-header>
         <site-menu></site-menu>
-        <site-banner></site-banner>
         <router-view></router-view>
         <site-footer></site-footer>
     </div>
@@ -11,15 +10,13 @@
 <script>
 import SiteHeader from '../components/site-header.vue';
 import SiteMenu from '../components/site-menu.vue';
-import SiteBanner from '../components/site-banner.vue';
 import SiteFooter from '../components/site-footer.vue';
 
 export default {
-    name: 'site-main',
+    name: 'site-sub',
     components: {
         SiteHeader,
         SiteMenu,
-        SiteBanner,
         SiteFooter,
     },
 };
