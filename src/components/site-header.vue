@@ -1,5 +1,12 @@
 <template>
-    <header id="header"></header>
+    <header id="header">
+        <h1>
+            <a href="/">Solid State</a>
+        </h1>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
 </template>
 
 <script>
