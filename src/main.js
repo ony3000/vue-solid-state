@@ -3,7 +3,7 @@ import SiteApp from './site-app.vue';
 import router from './router';
 
 new Vue({
-    el: '#page-wrapper',
+    el: '#site-wrapper',
     router,
     components: {
         SiteApp,
