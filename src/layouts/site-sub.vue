@@ -1,10 +1,10 @@
 <template>
     <div id="site-wrapper">
-    <div id="page-wrapper">
-        <site-header></site-header>
-        <router-view></router-view>
-        <site-footer></site-footer>
-    </div>
+        <div id="page-wrapper">
+            <site-header></site-header>
+            <router-view></router-view>
+            <site-footer></site-footer>
+        </div>
         <site-menu></site-menu>
     </div>
 </template>
