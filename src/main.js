@@ -1,10 +1,12 @@
 import Vue from 'vue/dist/vue.runtime.esm.js';
 import SiteApp from './site-app.vue';
 import router from './router';
+import store from './store';
 
 new Vue({
     el: '#site-wrapper',
     router,
+    store,
     components: {
         SiteApp,
     },
