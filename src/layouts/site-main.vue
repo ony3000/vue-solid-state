@@ -4,7 +4,7 @@
             <site-header></site-header>
             <site-banner></site-banner>
             <transition name="fade" mode="out-in">
-            <router-view></router-view>
+                <router-view></router-view>
             </transition>
             <site-footer></site-footer>
         </div>

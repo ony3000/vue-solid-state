@@ -48,7 +48,7 @@ export default {
         closeAndMove(link) {
             this.close();
             if (link.href !== '#') {
-                    this.$router.push(link.href);
+                this.$router.push(link.href);
             }
         },
     },
