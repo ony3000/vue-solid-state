@@ -13,6 +13,15 @@ new Vue({
     render(h) {
         return h(SiteApp);
     },
+    mounted() {
+        this.$nextTick(() => {
+            document.querySelector('body').addEventListener('keydown', (event) => {
+                if (event.keyCode === 27) {
+                    this.$store.dispatch('hideMenu');
+                }
+            });
+        });
+    },
 });
 
 window.addEventListener('load', function () {

@@ -1,13 +1,13 @@
 <template>
-    <nav id="menu">
-        <div class="inner">
+    <nav id="menu" @click.stop="close">
+        <div class="inner" @click.stop>
             <h2>Menu</h2>
             <ul class="links">
                 <li v-for="(item, index) in linkItems" :key="index">
-                    <a :href="item.href">{{ item.text }}</a>
+                    <a :href="item.href" @click.prevent.stop="closeAndMove(item)">{{ item.text }}</a>
                 </li>
             </ul>
-            <a href="#" class="close">Close</a>
+            <a href="#" class="close" @click.prevent.stop="close">Close</a>
         </div>
     </nav>
 </template>
@@ -40,6 +40,19 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+        close() {
+            this.$store.dispatch('hideMenu');
+        },
+        closeAndMove(link) {
+            this.close();
+            if (link.href !== '#') {
+                setTimeout(() => {
+                    this.$router.push(link.href);
+                }, 350);
+            }
+        },
     },
 };
 </script>
