@@ -25,8 +25,32 @@ new Vue({
     },
 });
 
+// At least for this template, this handler replaces scrollex.
+window.addEventListener('scroll', function () {
+    const $header = document.querySelector('#header');
+    const $banner = document.querySelector('#banner');
+
+    if (!$banner) {
+        $header.classList.remove('alt');
+        return;
+    }
+
+    const bannerTop = $banner.offsetTop;
+    const bannerBottom = bannerTop + $banner.offsetHeight - $header.offsetHeight;
+    const viewportTop = window.scrollY;
+    const viewportBottom = viewportTop + window.innerHeight;
+
+    if (viewportBottom >= bannerTop && viewportTop <= bannerBottom) {
+        $header.classList.add('alt');
+    } else {
+        $header.classList.remove('alt');
+    }
+});
+
+window.addEventListener('resize', function () {
+    window.dispatchEvent(new Event('scroll'));
+});
+
 window.addEventListener('load', function () {
-    setTimeout(function () {
-        document.querySelector('body').classList.remove('is-preload');
-    }, 100);
+    window.dispatchEvent(new Event('scroll'));
 });

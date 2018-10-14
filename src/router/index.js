@@ -54,4 +54,11 @@ const router = new VueRouter({
     },
 });
 
+router.afterEach((to, from) => {
+    document.querySelector('body').classList.add('is-preload');
+    setTimeout(() => {
+        document.querySelector('body').classList.remove('is-preload');
+    }, 100);
+});
+
 export default router;
