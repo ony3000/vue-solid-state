@@ -48,9 +48,7 @@ export default {
         closeAndMove(link) {
             this.close();
             if (link.href !== '#') {
-                setTimeout(() => {
                     this.$router.push(link.href);
-                }, 350);
             }
         },
     },

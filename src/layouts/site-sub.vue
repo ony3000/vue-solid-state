@@ -2,7 +2,9 @@
     <div id="site-wrapper">
         <div id="page-wrapper">
             <site-header></site-header>
+            <transition name="fade" mode="out-in">
             <router-view></router-view>
+            </transition>
             <site-footer></site-footer>
         </div>
         <site-menu></site-menu>

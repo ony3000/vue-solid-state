@@ -1,4 +1,5 @@
 import Vue from 'vue/dist/vue.runtime.esm.js';
+import './assets/customize.scss';
 import SiteApp from './site-app.vue';
 import router from './router';
 import store from './store';

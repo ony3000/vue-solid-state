@@ -45,6 +45,13 @@ const router = new VueRouter({
             ],
         },
     ],
+    scrollBehavior(to, from, savedPosition) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ x: 0, y: 0 });
+            }, 350);
+        });
+    },
 });
 
 export default router;
