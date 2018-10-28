@@ -6,7 +6,7 @@ import SiteApp from './site-app.vue';
 import router from './router';
 import store from './store';
 
-new Vue({
+const vm = new Vue({
     el: '#site-wrapper',
     router,
     store,
@@ -27,32 +27,14 @@ new Vue({
     },
 });
 
-// At least for this template, this handler replaces scrollex.
 window.addEventListener('scroll', function () {
-    const $header = document.querySelector('#header');
-    const $banner = document.querySelector('#banner');
-
-    if (!$banner) {
-        $header.classList.remove('alt');
-        return;
-    }
-
-    const bannerTop = $banner.offsetTop;
-    const bannerBottom = bannerTop + $banner.offsetHeight - $header.offsetHeight;
-    const viewportTop = window.scrollY;
-    const viewportBottom = viewportTop + window.innerHeight;
-
-    if (viewportBottom >= bannerTop && viewportTop <= bannerBottom) {
-        $header.classList.add('alt');
-    } else {
-        $header.classList.remove('alt');
-    }
+    vm.$store.dispatch('checkScroll');
 });
 
 window.addEventListener('resize', function () {
-    window.dispatchEvent(new Event('scroll'));
+    vm.$store.dispatch('checkScroll');
 });
 
 window.addEventListener('load', function () {
-    window.dispatchEvent(new Event('scroll'));
+    vm.$store.dispatch('checkScroll');
 });

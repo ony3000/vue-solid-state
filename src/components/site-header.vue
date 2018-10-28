@@ -1,5 +1,5 @@
 <template>
-    <header id="header">
+    <header id="header" :class="{alt: !isHeaderAppeared}">
         <h1>
             <a href="/">Solid State</a>
         </h1>
@@ -10,8 +10,15 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'site-header',
+    computed: {
+        ...mapState([
+            'isHeaderAppeared',
+        ]),
+    },
     methods: {
         toggleMenu() {
             this.$store.dispatch('toggleMenu');
