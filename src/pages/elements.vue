@@ -312,5 +312,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <script>
 export default {
     name: 'elements',
+    beforeRouteEnter(to, from, next) {
+        next((vm) => {
+            vm.$store.dispatch('checkScroll');
+        });
+    },
 };
 </script>

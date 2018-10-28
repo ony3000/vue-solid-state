@@ -77,5 +77,10 @@
 <script>
 export default {
     name: 'index',
+    beforeRouteEnter(to, from, next) {
+        next((vm) => {
+            vm.$store.dispatch('checkScroll');
+        });
+    },
 };
 </script>

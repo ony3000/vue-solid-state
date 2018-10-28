@@ -35,5 +35,10 @@
 <script>
 export default {
     name: 'generic',
+    beforeRouteEnter(to, from, next) {
+        next((vm) => {
+            vm.$store.dispatch('checkScroll');
+        });
+    },
 };
 </script>
