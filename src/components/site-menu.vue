@@ -49,7 +49,7 @@ export default {
             this.close();
             if (link.href !== '#') {
                 setTimeout(() => {
-                this.$router.push(link.href);
+                    this.$router.push(link.href);
                 }, 350);
             }
         },

@@ -3,7 +3,7 @@
         <div id="page-wrapper">
             <site-header></site-header>
             <site-banner></site-banner>
-                <router-view></router-view>
+            <router-view></router-view>
             <site-footer></site-footer>
         </div>
         <site-menu></site-menu>
